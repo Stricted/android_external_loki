@@ -17,3 +17,9 @@ LOCAL_MODULE_TAGS := eng
 LOCAL_STATIC_LIBRARIES := libc
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 include $(BUILD_EXECUTABLE)
+
+# build host binary
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := loki_flash.c loki_patch.c loki_find.c loki_unlok.c main.c
+LOCAL_MODULE := loki_tool
+include $(BUILD_HOST_EXECUTABLE)
